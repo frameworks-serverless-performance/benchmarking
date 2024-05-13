@@ -1,0 +1,93 @@
+Result of benchmark of Spring implementation echo endpoint done with "wrk"
+
+echo endpoint:
+
+    Normal instance:
+
+        Results at concurrency 64
+          16 threads and 64 connections
+          Thread Stats   Avg      Stdev     Max   +/- Stdev
+            Latency     1.12ms  471.74us  24.12ms   88.49%
+            Req/Sec     3.65k   312.25     4.91k    82.26%
+          874761 requests in 15.10s, 97.76MB read
+        Requests/sec:  57931.75
+        Transfer/sec:      6.47MB
+
+        Results at concurrency 128
+          16 threads and 128 connections
+          Thread Stats   Avg      Stdev     Max   +/- Stdev
+            Latency     2.23ms    0.97ms  39.17ms   89.67%
+            Req/Sec     3.68k   199.49     4.86k    73.05%
+          884126 requests in 15.10s, 98.81MB read
+        Requests/sec:  58550.29
+        Transfer/sec:      6.54MB
+
+        Results at concurrency 256
+          16 threads and 256 connections
+          Thread Stats   Avg      Stdev     Max   +/- Stdev
+            Latency     4.59ms    4.36ms 215.15ms   98.25%
+            Req/Sec     3.59k   522.00     9.06k    90.38%
+          858598 requests in 15.10s, 95.96MB read
+        Requests/sec:  56863.18
+        Transfer/sec:      6.35MB
+
+
+
+    Larger instance for validating test setup:
+        Results at concurrency 64
+            16 threads and 64 connections
+              Thread Stats   Avg      Stdev     Max   +/- Stdev
+                Latency   502.83us  250.38us  18.52ms   95.11%
+                Req/Sec     8.17k   408.59     9.30k    88.65%
+              1963783 requests in 15.10s, 219.47MB read
+            Requests/sec: 130054.50
+            Transfer/sec:     14.53MB
+
+        Results at concurrency 128
+            16 threads and 128 connections
+              Thread Stats   Avg      Stdev     Max   +/- Stdev
+                Latency     0.94ms  341.41us  17.37ms   91.01%
+                Req/Sec     8.61k   341.44    11.07k    81.38%
+              2065129 requests in 15.10s, 230.80MB read
+            Requests/sec: 136761.24
+            Transfer/sec:     15.28MB
+
+        Results at concurrency 256
+            16 threads and 256 connections
+              Thread Stats   Avg      Stdev     Max   +/- Stdev
+                Latency     1.96ms    2.92ms 208.38ms   99.79%
+                Req/Sec     8.43k   423.21    14.17k    93.98%
+              2021767 requests in 15.10s, 225.95MB read
+            Requests/sec: 133896.48
+            Transfer/sec:     14.96MB
+
+compute endpoint
+
+    Normal instance:
+
+        Results at concurrency 64:
+          16 threads and 64 connections
+          Thread Stats   Avg      Stdev     Max   +/- Stdev
+            Latency     2.79ms    2.05ms  51.17ms   93.40%
+            Req/Sec     1.57k   134.40     1.97k    71.88%
+          374885 requests in 15.01s, 63.71MB read
+        Requests/sec:  24983.61
+        Transfer/sec:      4.25MB
+
+        Results at concurrency 128:
+          16 threads and 128 connections
+          Thread Stats   Avg      Stdev     Max   +/- Stdev
+            Latency     7.96ms   15.68ms 294.42ms   94.72%
+            Req/Sec     1.61k   396.50    19.57k    97.50%
+          385541 requests in 15.10s, 65.52MB read
+        Requests/sec:  25534.18
+        Transfer/sec:      4.34MB
+
+        Results at concurrency 256:
+          16 threads and 256 connections
+          Thread Stats   Avg      Stdev     Max   +/- Stdev
+            Latency    34.94ms   98.57ms   1.07s    93.52%
+            Req/Sec     1.52k   328.55     7.74k    84.01%
+          363586 requests in 15.10s, 61.78MB read
+        Requests/sec:  24078.89
+        Transfer/sec:      4.09MB
