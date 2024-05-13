@@ -8,4 +8,4 @@ To test all endpoints at different levels of concurrency, the `test_with_levels_
 ```
 The first argument is the host/ip of the instance you want to benchmark. The second argument is the concurrency level to start at (concurrency is then doubled for every run). The third argument is the concurrency level to end at (inclusive).
 
-The raw test results are available in the `results` and `serverless_results` directories.
+The raw test results are available in `results.zip`
